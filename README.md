@@ -1,1 +1,1 @@
-# Beakjoon-Algorithm
+# Solving Algorithm problems
