@@ -1,22 +1,20 @@
-import sys
-from collections import Counter
-
-N = int(sys.stdin.readline())
-while True:
-    num_list = list(map(int, sys.stdin.readline().split()))
-    if len(num_list) == N:
-        break
-counter = Counter(num_list)
-M = int(sys.stdin.readline())
+from sys import stdin
+_ = stdin.readline()
+N = map(int,stdin.readline().split())
+_ = stdin.readline()
+M = map(int,stdin.readline().split())
+hashmap = {}
+for n in N:
+    if n in hashmap:
+        hashmap[n] += 1
+    else:
+        hashmap[n] = 1
 ans = []
-while True:
-    num_list2 = list(map(int, sys.stdin.readline().split()))
-    if len(num_list2) == M:
-        break
-for num in num_list2:
-    if num in counter.keys():
-        ans.append(counter[num])
+for m in M:
+    if m in hashmap.keys():
+        ans.append(hashmap[m])
     else:
         ans.append(0)
 for i in ans:
-    print(i, end=' ')
+    print(i, end=" ")
+
