@@ -1,10 +1,20 @@
-# itertools 라이브러리러 풀기
+# 백트래킹으로 풀기
 
 import sys
-from itertools import product
+
 N, M = map(int, sys.stdin.readline().split())
 
-it = list(product(range(1,N+1), repeat= M))
+s = []
 
-for i in it:
-    print(*i)
+def dfs():
+    if len(s) == M:
+        print(' '.join(map(str, s)))
+        return
+
+    for i in range(1, N+1): # for문 안에 dfs함수가 있다는 점!!
+        s.append(i)
+        dfs()
+        s.pop()
+
+
+dfs()
