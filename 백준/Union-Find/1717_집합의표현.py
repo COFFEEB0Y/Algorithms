@@ -9,6 +9,7 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 
+# 인덱스 번호와 값이 같으면 그 노드는 루트 노드
 Vroot = [i for i in range(n+1)]
 
 def Find(x):
